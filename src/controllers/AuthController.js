@@ -20,7 +20,7 @@ export default {
 
             const token = jwt.sign({ id: admin.id }, process.env.SECRET_KEY, { expiresIn: "1d" });
 
-            return reply.send(token);
+            return reply.send({ token });
         } catch (error) {
             return reply.send(error);
         }
