@@ -221,7 +221,7 @@ Endereço de acesso: [https://foodpark-qtgd.onrender.com/v1](https://foodpark-qt
     | Atributo        | Tipo do dado   | Descrição                                  | Obrigatório     |
     |-----------------|----------------|------------------------------------------- |-----------------|
     | Authorization   | bearer         | Token de autenticação do usuário           | sim             |
-    | id              | int            | Id da transação                            | não             |
+    | id              | int            | Id da transação                            | sim             |
 
 * **Retornos**
   
