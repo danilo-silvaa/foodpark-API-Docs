@@ -17,7 +17,7 @@ export default {
 
             return reply.send(transaction);
         } catch (error) {
-            return reply.send(error);
+            return reply.code(500).send(error);
         }
     },
 
@@ -35,7 +35,7 @@ export default {
 
             return reply.send({ total, totalPages, transactions });
         } catch (error) {
-            return reply.send(error);
+            return reply.code(500).send(error);
         }
     },
 
@@ -47,7 +47,7 @@ export default {
 
             return reply.send(statisticsService);
         } catch (error) {
-            return reply.send(error);
+            return reply.code(500).send(error);
         }
     },
 
@@ -58,7 +58,7 @@ export default {
             let transaction = await prisma.Transactions.findUnique({ where: { id: Number(id) } });
 
             if (!transaction) {
-                return reply.send({ error: { code: 400, message: 'Transaction not found.', status: 'FAILED_PRECONDITION' } });
+                return reply.code(400).send({ error: { code: 400, message: 'Transaction not found.', status: 'FAILED_PRECONDITION' } });
             }
 
             transaction = await prisma.Transactions.update({
@@ -68,7 +68,7 @@ export default {
 
             return reply.send(transaction);
         } catch (error) {
-            return reply.send(error);
+            return reply.code(500).send(error);
         }
     },
 
@@ -79,14 +79,14 @@ export default {
             let transaction = await prisma.Transactions.findUnique({ where: { id: Number(id) } });
 
             if (!transaction) {
-                return reply.send({ error: { code: 400, message: 'Transaction not found.', status: 'FAILED_PRECONDITION' } });
+                return reply.code(400).send({ error: { code: 400, message: 'Transaction not found.', status: 'FAILED_PRECONDITION' } });
             }
 
             await prisma.Transactions.delete({ where: { id: Number(id) } });
 
             return reply.send('Transaction deleted successfully.');
         } catch (error) {
-            return reply.send(error);
+            return reply.code(500).send(error);
         }
     },
 };
