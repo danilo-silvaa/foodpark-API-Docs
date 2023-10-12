@@ -6,7 +6,9 @@ Endereço de acesso: [https://foodpark-qtgd.onrender.com/v1](https://foodpark-qt
 
 ## Seções
 
-- [Autenticar um usuário](#autenticar-um-usuário)
+- [Autenticar um admin](#autenticar-um-admin)
+
+- [Obter dados do admin](#obter-dados-do-admin)
 
 - [Obter Estatísticas](#obter-estatísticas)
 
@@ -18,7 +20,7 @@ Endereço de acesso: [https://foodpark-qtgd.onrender.com/v1](https://foodpark-qt
 
 - [Deletar Transação](#deletar-transação)
 
-## Autenticar um usuário
+## Autenticar um admin
 
 * **URL**
 
@@ -43,6 +45,35 @@ Endereço de acesso: [https://foodpark-qtgd.onrender.com/v1](https://foodpark-qt
     ```json
     {
         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+    }
+    ```
+
+-----
+
+## Obter dados do admin
+
+* **URL**
+
+  `/admin`
+
+* **Método**
+
+  `GET`
+
+* **Parâmetros**
+
+    | Atributo        | Tipo do dado   | Descrição                                  | Obrigatório     |
+    |-----------------|----------------|------------------------------------------- |-----------------|
+    | Authorization   | bearer         | Token de autenticação do usuário           | sim             |
+
+* **Retornos**
+  
+  **Status Code:** 200
+  
+    ```json
+    {
+        "name": "Example",
+        "email": "Example@example.com"
     }
     ```
 
@@ -84,7 +115,6 @@ Endereço de acesso: [https://foodpark-qtgd.onrender.com/v1](https://foodpark-qt
     ```
 
 -----
-
 
 ## Criar Transação
 

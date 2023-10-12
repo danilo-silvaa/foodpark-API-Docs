@@ -28,13 +28,13 @@ export default {
 
     async admin(request, reply) {
         try {
-            const admin = await prisma.Admin.findUnique({ where: { id: request.adminId }, select: {} });
+            const admin = await prisma.Admin.findUnique({ where: { id: request.adminId }, select: { name: true, email: true, } });
 
             if (!admin) {
                 return reply.code(400).send({ error: { code: 400, message: 'Admin not found.', status: 'FAILED_PRECONDITION' } });
             }
 
-            return reply.send({ admin });
+            return reply.send(admin);
         } catch (error) {
             return reply.code(500).send(error);
         }
