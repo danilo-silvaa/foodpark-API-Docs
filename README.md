@@ -2,7 +2,7 @@
 
 Documentação para uso dos endpoints da API.
 
-Endereço de acesso: [https://foodpark-qtgd.onrender.com/v1](https://foodpark-qtgd.onrender.com/v1)
+Endereço de acesso: [https://plankton-app-96hra.ondigitalocean.app/](https://plankton-app-96hra.ondigitalocean.app/)
 
 ## Seções
 
@@ -34,8 +34,8 @@ Endereço de acesso: [https://foodpark-qtgd.onrender.com/v1](https://foodpark-qt
 
     | Atributo   | Tipo do dado   | Descrição                                  | Obrigatório     |
     |------------|----------------|------------------------------------------- |-----------------|
-    | email      | string         | Endereço de e-mail do usuário              | sim             |
-    | password   | string         | Senha do usuário                           | sim             |
+    | email      | string         | Endereço de e-mail do admin              | sim             |
+    | password   | string         | Senha do admin                           | sim             |
     | recaptcha  | string         | Token do Google reCAPTCHA                  | sim             |
 
 * **Retornos**
@@ -64,7 +64,7 @@ Endereço de acesso: [https://foodpark-qtgd.onrender.com/v1](https://foodpark-qt
 
     | Atributo        | Tipo do dado   | Descrição                                  | Obrigatório     |
     |-----------------|----------------|------------------------------------------- |-----------------|
-    | Authorization   | bearer         | Token de autenticação do usuário           | sim             |
+    | Authorization   | bearer         | Token de autenticação do admin             | sim             |
 
 * **Retornos**
   
@@ -93,7 +93,7 @@ Endereço de acesso: [https://foodpark-qtgd.onrender.com/v1](https://foodpark-qt
 
     | Atributo        | Tipo do dado   | Descrição                                  | Obrigatório     |
     |-----------------|----------------|------------------------------------------- |-----------------|
-    | Authorization   | bearer         | Token de autenticação do usuário           | sim             |
+    | Authorization   | bearer         | Token de autenticação do admin             | sim             |
 
 * **Retornos**
   
@@ -130,10 +130,10 @@ Endereço de acesso: [https://foodpark-qtgd.onrender.com/v1](https://foodpark-qt
 
     | Atributo        | Tipo do dado   | Descrição                                      | Obrigatório     |
     |-----------------|----------------|------------------------------------------------|-----------------|
-    | Authorization   | bearer         | Token de autenticação do usuário               | sim             |
+    | Authorization   | bearer         | Token de autenticação do admin                 | sim             |
     | description     | string         | Descrição da transação                         | sim             |
     | price           | int            | Valor da transação                             | sim             |
-    | type            | boolean        | Tipo da transação (defina apenas se for saída) | não             |
+    | type            | boolean        | Tipo da transação (defina apenas se for saída) | sim             |
 
 * **Retornos**
   
@@ -156,7 +156,7 @@ Endereço de acesso: [https://foodpark-qtgd.onrender.com/v1](https://foodpark-qt
 
 * **URL**
 
-  `/transactions`
+  `/transactions/:pageNum`
 
 * **Método**
 
@@ -166,8 +166,8 @@ Endereço de acesso: [https://foodpark-qtgd.onrender.com/v1](https://foodpark-qt
 
     | Atributo        | Tipo do dado   | Descrição                                  | Obrigatório     |
     |-----------------|----------------|------------------------------------------- |-----------------|
-    | Authorization   | bearer         | Token de autenticação do usuário           | sim             |
-    | skip            | int            | Obtem as transações da próxima página      | não             |
+    | Authorization   | bearer         | Token de autenticação do admin             | sim             |
+    | pageNum         | int            | Numero da página atual                     | não             |
 
 * **Retornos**
   
@@ -214,7 +214,7 @@ Endereço de acesso: [https://foodpark-qtgd.onrender.com/v1](https://foodpark-qt
 
     | Atributo        | Tipo do dado   | Descrição                                      | Obrigatório     |
     |-----------------|----------------|------------------------------------------------|-----------------|
-    | Authorization   | bearer         | Token de autenticação do usuário               | sim             |
+    | Authorization   | bearer         | Token de autenticação do admin                 | sim             |
     | description     | string         | Descrição da transação                         | sim             |
     | price           | int            | Valor da transação                             | sim             |
     | type            | boolean        | Tipo da transação (defina apenas se for saída) | não             |
@@ -240,7 +240,7 @@ Endereço de acesso: [https://foodpark-qtgd.onrender.com/v1](https://foodpark-qt
 
 * **URL**
 
-  `/transactions/:id`
+  `/transaction/:id`
 
 * **Método**
 
@@ -250,7 +250,7 @@ Endereço de acesso: [https://foodpark-qtgd.onrender.com/v1](https://foodpark-qt
 
     | Atributo        | Tipo do dado   | Descrição                                  | Obrigatório     |
     |-----------------|----------------|------------------------------------------- |-----------------|
-    | Authorization   | bearer         | Token de autenticação do usuário           | sim             |
+    | Authorization   | bearer         | Token de autenticação do admin             | sim             |
     | id              | int            | Id da transação                            | sim             |
 
 * **Retornos**

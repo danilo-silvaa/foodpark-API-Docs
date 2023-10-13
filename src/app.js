@@ -10,5 +10,5 @@ server.register(router, { prefix: '/v1' });
 
 server.listen({
     host: '0.0.0.0',
-    port: process.env.port ?? 8080
+    port: process.env.PORT ?? 3333
 })
